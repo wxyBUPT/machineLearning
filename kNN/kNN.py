@@ -93,4 +93,3 @@ if __name__=="__main__":
     print type(dataSet)
     print dataSet.shape
     dataSetSource.testShow(dataSet,labels)
-
