@@ -74,8 +74,8 @@ def classifyNB(vec2Classify,p0Vec,p1Vec,pClass1):
     :param pClass1:
     :return:
     '''
-    p1=sum([log(a) for a in vec2Classify*p1Vec])+log(pClass1)
-    p0=sum([log(a) for b in vec2Classify*p0Vec])+log(pClass1)
+    p1=sum( vec2Classify*p1Vec)+log(pClass1)
+    p0=sum(vec2Classify*p0Vec)+log(pClass1)
     if p1>p0:
         return 1
     else:
