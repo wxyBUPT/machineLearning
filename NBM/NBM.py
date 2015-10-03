@@ -81,3 +81,15 @@ def classifyNB(vec2Classify,p0Vec,p1Vec,pClass1):
     else:
         return 0
 
+def bagOfWords2VecMN(vocabList,inputSet):
+    '''
+    词袋模型
+    :param vocabList: 单词集
+    :param inputSet: 输入的文本
+    :return:
+    '''
+    retVec=[0]*len(vocabList)
+    for word in inputSet:
+        if word in vocabList:
+            retVec[vocabList.index(word)]+=1
+    return retVec
