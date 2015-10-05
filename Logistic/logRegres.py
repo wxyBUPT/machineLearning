@@ -37,8 +37,8 @@ def stocGradAscent0(dataMatrix,classLabels,times=1):
     m,n=shape(dataMatrix)
     alpha=0.01
     weights=ones(n)
-    for k in range(m):
-        for i in range(times):
+    for k in range(times):
+        for i in range(m):
             h=sigmoid(sum(dataMatrix[i]*weights))
             error=classLabels[i]-h
             weights=weights+alpha*error*array(dataMatrix[i])
@@ -68,6 +68,10 @@ def plotBestFit(weights):
     plt.xlabel('X1')
     plt.ylabel('X2')
     plt.show()
+
+def classifyVector(inX,weights):
+    prob=sigmoid(sum(inX*weights))
+    return 1.0 if prob>0.5 else 0.0
 
 if __name__=="__main__":
     a,b=loadDataSet()
